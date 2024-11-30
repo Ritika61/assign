@@ -1,0 +1,190 @@
+/* General Dashboard Styles */
+.dashboard-container {
+  font-family: Arial, sans-serif;
+  padding: 1rem;
+  background-color: #f4f4f4;
+}
+
+/* Header Section */
+header {
+  background: #007bff;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Tabs and Navigation */
+.tabs-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #f9f9f9;
+  transition: all 0.3s ease-in-out;
+}
+
+.tab:hover {
+  background: #e2e6ea;
+}
+
+.active-tab {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+/* Tab Content Section */
+.tab-content {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+  background: white;
+  margin-bottom: 1rem;
+}
+
+/* Section-Specific Styles */
+.jobs-container, .add-job-container, .applications-container {
+  margin-top: 1rem;
+}
+
+/* Job Cards */
+.job-card {
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #f9f9f9;
+}
+
+.job-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #007bff;
+}
+
+.job-card p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.job-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.job-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.job-actions button:hover {
+  background: #0056b3;
+}
+
+/* Add Job Form */
+.add-job-container input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-job-container button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-job-container button:hover {
+  background: #0056b3;
+}
+
+/* Applications List */
+.applications-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.applications-container li {
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.applications-container li strong {
+  color: #007bff;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.pagination span {
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tabs-container {
+    flex-direction: column;
+  }
+
+  .job-actions {
+    flex-direction: column;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
