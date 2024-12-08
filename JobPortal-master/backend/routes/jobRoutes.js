@@ -75,8 +75,8 @@ router.get("/company-jobs", authMiddleware, async (req, res) => {
 
 // Company: Accept or reject a job application
 router.post("/application/:id/status", authMiddleware, async (req, res) => {
-  const { id } = req.params; // Application ID
-  const { status } = req.body; // 'accepted' or 'rejected'
+  const { id } = req.params; 
+  const { status } = req.body; 
 
   if (req.user.role !== "company") {
     return res.status(403).json({ message: "Forbidden" });

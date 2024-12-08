@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { api } from '../api';
 import { AuthContext } from '../context/AuthContext';
-import './CompanyDashboard.css'; // Import updated CSS for styling
+import './CompanyDashboard.css'; 
 
 const CompanyDashboard = () => {
   const [jobs, setJobs] = useState([]);
@@ -36,7 +36,7 @@ const CompanyDashboard = () => {
     setFormData({ title: job.title, description: job.description, location: job.location });
     setIsEditing(true);
     setEditingJobId(job.id);
-    setActiveTab('add-job'); // Automatically switch to "Add Job" tab for editing
+    setActiveTab('add-job'); 
   };
 
   const handleUpdateJob = async () => {
@@ -67,6 +67,25 @@ const CompanyDashboard = () => {
   const handlePageChange = (page) => {
     fetchJobs(page);
   };
+
+  const handleApplicationStatusChange = async (applicationId, status) => {
+    try {
+      await api.post(
+        `/application/${applicationId}/status`, // Matches backend route
+        { status }, // Send the status in the request body
+        { headers: { Authorization: `Bearer ${auth.token}` } } // Include auth token
+      );
+  
+      fetchApplications();
+      alert(`Application ${status} successfully.`);
+    } catch (error) {
+      console.error('Error updating application status:', error);
+      const errorMessage = error.response?.data?.message || 'Failed to update application status.';
+      alert(errorMessage);
+    }
+  };
+  
+  
 
   return (
     <div className="dashboard-container">
@@ -195,6 +214,10 @@ const CompanyDashboard = () => {
                   <p>
                     <strong>Applicant:</strong> {application.applicantId}
                   </p>
+                  <button className="accept-button"  onClick={() => handleApplicationStatusChange(application.id, 'accepted')}
+              >Accept</button> 
+               <button className="reject-button" onClick={() => handleApplicationStatusChange(application.id, 'rejected')} >
+                Reject</button>               
                 </div>
               ))}
             </div>

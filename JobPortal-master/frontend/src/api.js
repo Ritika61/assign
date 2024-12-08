@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:9000/api',
+  baseURL: 'http://localhost:8000/api',
 });
 
 const setAuthToken = token => {
@@ -12,5 +12,6 @@ const setAuthToken = token => {
     delete api.defaults.headers.common['Authorization'];
   }
 };
+
 
 export { api, setAuthToken };

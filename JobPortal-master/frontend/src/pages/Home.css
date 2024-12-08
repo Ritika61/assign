@@ -1,17 +1,23 @@
-/* Apply the background image for home, login, and register pages */
-.home-container, .login-container, .register-container {
-    height: 100vh;
+body{
+    margin: 0; 
+    padding: 0; 
+    height: 100vh; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;}
+
+    .home-container, .login-container, .register-container {
+    height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('C:/Users/Administrator/Pictures/Screenshots/Screenshot 2024-11-13 085222.png'); /* Update with your background image path */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative; /* Ensures child elements are positioned correctly */
+    background-image: url('C:\Users\Administrator\Downloads\assign\JobPortal-master\frontend\src\images\Screenshot 2024-11-13 085222.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    position: relative; 
 }
-
-/* Add a dark overlay for login and register pages */
 .login-container::before, .register-container::before {
     content: "";
     position: absolute;
@@ -19,13 +25,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(8, 8, 8, 0.5); /* Dark overlay */
-    z-index: -1; /* Keeps overlay behind form content */
+    background: rgba(8, 8, 8, 0.5); 
+    z-index: -1; 
 }
 
-/* Content box styling for general pages */
 .content {
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    background-color: rgba(0, 0, 0, 0.5); 
     color: white;
     text-align: center;
     padding: 20px;
@@ -54,28 +59,25 @@
     background-color: #0056b3;
 }
 
-/* Form container for login and register pages */
 .login-container form, .register-container form {
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    background-color: rgba(0, 0, 0, 0.5); 
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    z-index: 1; /* Keeps form content above overlay */
+    z-index: 1; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers form fields */
+    align-items: center; 
 }
 
-/* Form headers */
 .login-container h2, .register-container h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #fafafa;
 }
 
-/* Input fields for login and register forms */
 .login-container input[type="email"],
 .login-container input[type="password"],
 .register-container input[type="text"],
@@ -84,27 +86,24 @@
     width: 90%;
     padding: 10px;
     margin: 5px 0;
-    border: 1px solid #393737; /* Subtle border */
+    border: 1px solid #393737;
     border-radius: 5px;
     font-size: 14px;
-    background-color: rgba(0, 0, 0, 0.7); /* Black with transparency */
-    color: white; /* Text color */
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white; 
 }
 
-/* Placeholder styling */
 .login-container input::placeholder,
 .register-container input::placeholder {
-    color: white; /* Placeholder text color */
+    color: white; 
 }
 
-/* Input focus styling */
 .login-container input:focus,
 .register-container input:focus {
-    border-color: #007bff; /* Highlight border */
+    border-color: #007bff; 
     outline: none;
 }
 
-/* Button styling */
 .login-container button,
 .register-container button {
     width: 90%;
@@ -116,7 +115,7 @@
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 10px; /* Add some spacing above buttons */
+    margin-top: 10px; 
 }
 
 .login-container button:hover,
@@ -124,7 +123,6 @@
     background-color: #0056b3;
 }
 
-/* Paragraph styling inside forms */
 .login-container p,
 .register-container p {
     text-align: center;
@@ -143,20 +141,19 @@
     text-decoration: underline;
 }
 
-/* Register form role selection */
 .register-container .role-selection {
     margin-top: 15px;
     display: flex;
-    justify-content: center; /* Center align */
-    flex-direction: column; /* Stack vertically */
+    justify-content: center; 
+    flex-direction: column; 
     align-items: center;
 }
 
 .register-container .role-selection label {
     display: block;
     font-weight: bold;
-    color: white; /* White label text */
-    margin-bottom: 10px; /* Spacing between options */
+    color: white; 
+    margin-bottom: 10px; 
 }
 
 .register-container .role-selection input {

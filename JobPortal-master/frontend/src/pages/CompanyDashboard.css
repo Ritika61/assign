@@ -1,4 +1,3 @@
-/* Tabs */
 .tabs-container {
     display: flex;
     gap: 1rem;
@@ -25,7 +24,6 @@
     color: white;
   }
   
-  /* Hide inactive sections */
   .dashboard-content section {
     display: none;
   }
@@ -68,7 +66,6 @@
     color: white;
   }
   
-  /* Add Job Form */
   .job-form-container {
     display: flex;
     justify-content: center;
@@ -105,5 +102,27 @@
   
   .job-form button:hover {
     background-color: #0056b3;
+  }
+  
+  .application-card {
+    border: 1px solid #ccc;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .application-header {
+    font-weight: bold;
+  }
+  
+  .application-details {
+    margin-top: 10px;
+  }
+  
+  .application-card button {
+    padding: 8px 15px;
+    margin-top: 10px;
+    cursor: pointer;
   }
   
