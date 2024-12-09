@@ -28,12 +28,14 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ where: { email } });
+  console.log("Login",user.id,await bcrypt.compare(password, user.password))
+ 
   if (!user || !(await bcrypt.compare(password, user.password)))
     return res.status(401).send('Invalid credentials');
 
   const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET); 
   console.log("Backend Login",{ token: token , role: user.role })
-  res.json({ token: token , role: user.role });
-});
+  res.json({ token: token , role: user.role }); 
+}); 
 
 module.exports = router;

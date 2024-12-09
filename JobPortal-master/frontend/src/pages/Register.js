@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { api } from '../api';
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const Register = () => {
     password: '',
     role: 'applicant',
   });
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -15,6 +17,7 @@ const Register = () => {
       const res = await api.post('/auth/register', formData);
       console.log('Response:', res);
       alert('Registration successful!');
+      navigate("/login");
     } catch (error) {
       console.error('Registration failed:', error);
       alert('Failed to register. Please try again.');

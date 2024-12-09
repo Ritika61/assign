@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await api.post("/auth/login", formData);
-      console.log("reslogin", response);
+      console.log("reslogin", response,response.data.token,response.data.role);
       setAuth({ token: response.data.token, role: response.data.role });
       setAuthToken(response.data.token);
       localStorage.setItem("authToken", response.data.token);

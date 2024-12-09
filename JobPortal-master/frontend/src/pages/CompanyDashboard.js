@@ -69,11 +69,12 @@ const CompanyDashboard = () => {
   };
 
   const handleApplicationStatusChange = async (applicationId, status) => {
+    console.log("Application Status Change",applicationId,status)
     try {
       await api.post(
-        `/application/${applicationId}/status`, // Matches backend route
-        { status }, // Send the status in the request body
-        { headers: { Authorization: `Bearer ${auth.token}` } } // Include auth token
+        `/jobs/status/${applicationId}`, // Matches backend route
+        { status }, 
+        { headers: { Authorization: auth?.token } }
       );
   
       fetchApplications();
@@ -214,6 +215,7 @@ const CompanyDashboard = () => {
                   <p>
                     <strong>Applicant:</strong> {application.applicantId}
                   </p>
+                  {console.log("auth")}
                   <button className="accept-button"  onClick={() => handleApplicationStatusChange(application.id, 'accepted')}
               >Accept</button> 
                <button className="reject-button" onClick={() => handleApplicationStatusChange(application.id, 'rejected')} >
