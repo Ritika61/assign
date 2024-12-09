@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { api } from '../api';
 import { AuthContext } from '../context/AuthContext';
 import moment from 'moment';
-import './ApplicantDashboard.css';
+import '../css/ApplicantDashboard.css';
 
 const ApplicantDashboard = () => {
   const [jobs, setJobs] = useState([]);

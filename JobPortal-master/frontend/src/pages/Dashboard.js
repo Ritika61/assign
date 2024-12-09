@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
-import { api, setAuthToken } from '../api';
+import { api } from '../api';
 
 const Dashboard = () => {
   const { auth } = useContext(AuthContext);

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { api } from '../api';
 import { AuthContext } from '../context/AuthContext';
-import './CompanyDashboard.css'; 
+import '../css/CompanyDashboard.css'; 
 
 const CompanyDashboard = () => {
   const [jobs, setJobs] = useState([]);
